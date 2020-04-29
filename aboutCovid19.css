@@ -1,0 +1,10 @@
+.THIS .mainText{
+    color:black;
+    line-height: 25px;
+    font-family: Arial;
+    font-size: medium;
+    text-align: justify;
+}
+.THIS {
+    height: 500px;
+}

@@ -1,0 +1,25 @@
+<aura:component >
+    <div class="slds-text-heading_small">
+        <p class="mainText">Reported illnesses have ranged from mild symptoms to severe illness and death for confirmed 
+            coronavirus disease 2019 (COVID-19) cases.The following symptoms may appear 2-14 days after exposure.</p>
+        <b>Common Symptoms:</b>
+        <p class="mainText">
+            <ul class="slds-list_dotted" style="list-style: disc;">
+                <li>Fever</li>
+                <li>Cough</li>
+                <li>Shortness of breath</li>
+                <li>Tiredness</li>
+            </ul>
+        </p>
+        <b>Other Symptoms:</b>
+        <p class="mainText">
+            <ul class="slds-list_dotted" style="list-style: disc;">
+                <li>Aches and Pains</li>
+                <li>Sore throat</li>
+                <li>Diarrhoea</li>
+            </ul>
+        </p>
+        <p style="color:red">*This is based on what has been seen previously as the incubation period of the MERS-CoV viruses.</p>
+    <img src="{!$Resource.coronaImages + '/2.jpg'}" />
+    </div>
+</aura:component>

@@ -1,0 +1,26 @@
+<aura:component>
+    <div class="slds-text-heading_small">
+        <p class="mainText">The coronavirus (COVID-19) is a family of viruses that can cause a range of illnesses 
+            in humans including common cold and more severe forms like SARS and MERS which 
+            are life-threatening. The virus is named after its shape which takes the form of a crown 
+            with protrusions around it and hence is known as coronavirus.
+        </p>
+        <br/>
+        <b>How did the recent outbreak occur?</b>
+        <p class="mainText">
+            The recent outbreak of coronavirus is believed to have occurred in a market for illegal 
+            wildlife in the central Chinese city of Wuhan. Chinese health authorities and the WHO 
+            are investigating the outbreak of the recent coronavirus.
+        </p>
+        <br/>
+        <b>Is the recent strain fatal?</b>
+        <p class="mainText">Since it's a new strain, there is no specific vaccine that can treat it. 
+            However, according to the WHO, "many of the symptoms can be treated and therefore 
+            treatment based on the patient’s clinical condition". 
+            However, it has already killed over 169,000 globally.</p>
+        <br/>
+        <b>What steps have been taken so far to check its spread?</b>
+        <p class="mainText">The Chinese govt initially locked down Wuhan - the epicenter of the virus outbreak. 
+            However it was too late. The virus has spread to all continents now, except Antarctica.</p>
+    </div>
+</aura:component>

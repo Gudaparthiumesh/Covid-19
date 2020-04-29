@@ -1,0 +1,109 @@
+<aura:component implements="force:appHostable" controller="Covid19_Status_Tracker_ctrl">
+    <aura:attribute name="countriesLst" type="List"/>
+    <aura:attribute name="fullResult" type="Object[]"/>
+    <aura:attribute name="tableDataLst" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="SelectedCountry" type="String"/>
+    <aura:attribute name="displayMessage" type="boolean"/>
+    
+    <div class="slds-box" style="background:white">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_7-of-12">
+                <article class="slds-card slds-card_boundary forceRelatedListCardDesktop">
+                    <div class="slds-card__header slds-grid"> 
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__figure">
+                                <span class="slds-icon_container slds-icon-standard-custom">
+                                    <img class="slds-avatar slds-avatar--large" src="{!$Resource.coronaImages + '/4.jpg'}" />
+                                </span>
+                            </div>
+                            <div style="width: 70%; float:left">
+                                <div class="slds-media__body">
+                                    <h3>
+                                        <span class="slds-text-heading_medium "><b>COVID-19 Statistics</b></span> 
+                                    </h3>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body">
+                        <div style="padding:15px">
+                            <lightning:select class="slds-size_5-of-12"  aura:id="selCountry" value="{!v.SelectedCountry}" label="Select Country" onchange="{!c.getSelectedCountry}">
+                                <option value="">--None--</option>
+                                <aura:iteration items="{!v.countriesLst}" var="con">
+                                    <option text="{!con.Country}" value="{!con.Country}"/>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                        <div style="padding:10px">
+                            <aura:if isTrue="{!v.displayMessage}">
+                                <div class="slds-text-heading_medium" align="center">
+                                    <b>No Results Found</b>
+                                </div>
+                                <aura:set attribute="else">
+                                    <aura:iteration items="{!v.tableDataLst}" var="dt">
+                                        <table class="slds-text-heading_small demo" align="center">
+                                            <thead>
+                                                <th colspan="2">
+                                                    <div class="slds-truncate" style="text-align:center;">{!dt.Country}</div>
+                                                </th>
+                                            </thead>
+                                            <tr>
+                                                <td>Total Confirmed Cases</td>
+                                                <td>{!dt.TotalConfirmed}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>New Confirmed Cases</td>
+                                                <td>{!dt.NewConfirmed}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Recovered Cases</td>
+                                                <td>{!dt.TotalRecovered}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>New Recovered Cases</td>
+                                                <td>{!dt.NewRecovered}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Deaths</td>
+                                                <td>{!dt.TotalDeaths}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>New Deaths</td>
+                                                <td>{!dt.NewDeaths}</td>
+                                            </tr>
+                                            <thead>
+                                                <th colspan="2">
+                                                    <div class="slds-truncate" style="text-align:center;">
+                                                        Updated: <lightning:formattedDateTime value="{!dt.Date}" year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                                                              minute="2-digit" timeZoneName="short" hour12="true"/>
+                                                    </div>
+                                                </th>
+                                            </thead>
+                                        </table>
+                                    </aura:iteration>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="slds-col slds-size_5-of-12">
+                <lightning:tabset >
+                    <lightning:tab label="ABOUT COVID-19" id="1">
+                        <c:aboutCovid19/>
+                    </lightning:tab>
+                    <lightning:tab label="HOW IT SPREADS" id="2">
+                        <c:howItSpreadsCovid19/>
+                    </lightning:tab>
+                    <lightning:tab label="SYMPTOMS" id="3">
+                        <c:SymptomsCovid19/>
+                    </lightning:tab>
+                    <lightning:tab label="PREVENTION" id="4">
+                        <c:preventionCovid19/>
+                    </lightning:tab>
+                </lightning:tabset>
+            </div>
+        </div>
+    </div>
+</aura:component>
