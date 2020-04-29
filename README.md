@@ -13,4 +13,4 @@ Pre-Requisite for Using this Code.
       
  2) To view the UI , create a Lightning Tab / Lighnting App and provide the component name approprialtly
  
- 3) View the UI & explore the functionality.
+ 3) View the UI & explore the functionality
